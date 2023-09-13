@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Checkout
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
     
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -26,7 +26,7 @@ jobs:
         cache-dependency-path: blackwoodops-website/package-lock.json
 
     - name: Build and deploy
-    - uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
       with:
         # Github access token token used to deploy on gh_pages. You can find it on Github.
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
