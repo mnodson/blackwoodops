@@ -30,7 +30,6 @@ jobs:
       with:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
         angular_project_dir: blackwoodops-website
-        base_href: /blackwoodops/
         angular_dist_build_folder: blackwoodops-website/dist/blackwoodops-website
 
 permissions:
