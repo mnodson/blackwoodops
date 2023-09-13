@@ -14,10 +14,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: blackwoodops-website
-
     strategy:
       matrix:
         node-version: [14.x, 16.x, 18.x]
@@ -31,4 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+      working-directory: blackwoodops-website
+      
     - run: npm run build --if-present
+      working-directory: blackwoodops-website
