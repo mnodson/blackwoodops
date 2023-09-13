@@ -20,6 +20,7 @@
             "outputPath": "dist/blackwoodops-website",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "baseHref": "/blackwoodops/",
             "polyfills": [
               "zone.js"
             ],
