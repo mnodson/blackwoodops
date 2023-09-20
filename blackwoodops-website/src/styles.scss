@@ -4,4 +4,13 @@ html, body {
     font-family: 'Alumni Sans Pinstripe', sans-serif;
     height: 100vh;
     margin: 0;
+    background: #000;
+}
+
+:root {
+    --brand-purple: #3b1536;
+    --brand-orange: #b87333;
+    --brand-light: #fffcf2;
+    --brand-dark: #282c28;
+    --brand-teal: #5296a5;
 }
