@@ -3,21 +3,6 @@
     height: inherit;
 }
 
-.main__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    height: inherit;
-}
-
-h1 {
-    font-size: 5rem;
-    text-align: center;
-}
-
-h2 {
-    font-size: 3rem;
-    color: #673AB7;
+.logo_circle {
+    background: url('/assets/images/logo_circle.png');
 }
