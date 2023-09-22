@@ -8,6 +8,98 @@
 }
 
 .main__container {
-    display: flex;
-    justify-content: center;
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.banner {
+    background: #000;
+    margin-top: 5rem;
+
+    >div {
+        width: 30vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .logo_banner-top {
+
+        background: var(--brand-light);
+        border: 2px solid var(--brand-light);
+
+        h1 {
+            font-family: 'Alumni Sans Pinstripe', sans-serif;
+            font-family: 'Chivo Mono', monospace;
+            background: url('/assets/images/background_forrest.webp');
+            background-attachment: fixed;
+            background-size: cover;
+            text-align: center;
+            margin: 0;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-indent: 0.5rem;
+            font-kerning: none;
+            font-size: clamp(1rem, -0.875rem + 4.633vw, 7rem);
+            letter-spacing: clamp(0rem, -1.2rem + 3.333vw, 1rem);
+        }
+    }
+}
+
+.logo_banner-bottom {
+    border: 2px solid var(--brand-light);
+
+    h2 {
+        text-align: center;
+        color: var(--brand-teal);
+        font-size: 3rem;
+        margin: 0;
+        font-kerning: none;
+        font-size: clamp(1rem, -0.875rem + 4.633vw, 3rem);
+        letter-spacing: clamp(0rem, -1.1rem + 2.933vw, 3.8rem);
+        text-indent: clamp(0rem, -1.1rem + 2.233vw, 2.4rem);
+    }
+}
+
+
+.seg {
+    height: 50rem;
+}
+
+
+
+@media only screen and (max-width: 480px) {
+    .banner {
+        margin-top: 0;
+
+        >div {
+            width: 100vw;
+            box-sizing: border-box;
+        }
+
+        .logo_banner-top {
+
+            background: var(--brand-light);
+            border: 2px solid var(--brand-light);
+
+            h1 {
+                text-indent: 0;
+                font-size: 4rem;
+                letter-spacing: initial;
+            }
+        }
+    }
+
+    .logo_banner-bottom {
+
+
+        h2 {
+            font-size: 2.5rem;
+            letter-spacing: 1.4rem;
+            text-indent: 1.5rem;
+
+        }
+    }
 }
