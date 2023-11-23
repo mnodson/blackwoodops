@@ -2,9 +2,12 @@
 
 html, body {
     font-family: 'Alumni Sans Pinstripe', sans-serif;
-    //height: 100vh;
     margin: 0;
     background: #000;
+}
+
+html {
+    scroll-snap-type: y mandatory;
 }
 
 :root {

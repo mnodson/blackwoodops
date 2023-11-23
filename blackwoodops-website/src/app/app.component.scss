@@ -16,7 +16,7 @@
 
 .banner {
     background: #000;
-    margin-top: 5rem;
+    padding-top: 2rem;
 
     >div {
         width: 30vw;
@@ -63,16 +63,201 @@
     }
 }
 
-
-.seg {
-    height: 50rem;
+.row {
+    display: flex;
+    flex-direction: row;
 }
 
+.scroller {
+
+
+    section {
+        scroll-snap-align: start;
+        height: 100vh;
+
+        &:first-child {
+            display: grid;
+            align-content: stretch;
+            align-items: stretch;
+            grid-template-rows: 0fr 2fr;
+        }
+
+        &:not(:first-child) {
+            .seg {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 5rem;
+            }
+        }
+    }
+}
+
+.seg {
+    height: 100%;
+    position: relative;
+
+    color: #fff;
+}
+
+.office_background {
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) -60%, rgb(0, 0, 0) 70%), url(/assets/images/office_background.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0rem auto;
+    background-position: center;
+    width: 70%;
+    position: relative;
+
+    .seg-content {
+        color: #F5F5F5;
+        margin: auto 10rem;
+        padding-top: 5rem;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .bullet-points {
+            display: flex;
+            gap: 1rem;
+            font-size: 1.5rem;
+            color: var(--brand-teal);
+            line-height: 0;
+
+            >h2 {
+                margin-top: 0;
+            }
+
+            &.horizontal {
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+.headshot {
+    width: 40rem;
+    height: 60rem;
+
+    .floating-pin {
+        position: absolute;
+        bottom: 3rem;
+        right: -6rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        flex-direction: row;
+
+        >.reveal {
+            transition: all 0.25s;
+            opacity: 0;
+            transform: translateX(4rem);
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 900;
+            position: absolute;
+        }
+
+        >.meta {
+            transition: all 0.25s;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        >.icon {
+            transition: all 0.25s;
+        }
+
+        &:hover {
+            >.icon {
+                transform: rotateY(180deg);
+            }
+
+            >.meta {
+                transform: translateX(4rem);
+                opacity: 0;
+            }
+
+            >.reveal {
+                transform: translateX(5rem);
+                opacity: 1;
+            }
+        }
+
+        .icon {
+            width: 4rem;
+            height: 4rem;
+            background: url(/assets/images/contact_icon_purple.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            border: 2px solid #B0BEC5;
+            border-radius: 10rem;
+        }
+
+        .meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0rem;
+
+            .line-1 {
+                font-size: 3rem;
+                color: #fff;
+                font-weight: 900;
+            }
+
+            .line-2 {
+                font-size: 2.5rem;
+                color: #888;
+                font-weight: 900;
+            }
+        }
+    }
+
+    &.donna {
+        background: linear-gradient(to right, transparent 40%, black 100%), url(/assets/images/donna_transparent.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 0%;
+        bottom: 0rem;
+        background-position: bottom right;
+    }
+}
+
+
+.scroll-segments {
+    position: fixed;
+    right: 4rem;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 2rem;
+
+    >.section {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 10rem;
+        background: #9E9E9E;
+        transition: all .25s;
+
+        &.active {
+            width: 2rem;
+            height: 2rem;
+            background: #3b1536;
+        }
+    }
+}
 
 
 @media only screen and (max-width: 480px) {
     .banner {
         margin-top: 0;
+        padding-top: 0;
 
         >div {
             width: 100vw;
@@ -93,13 +278,95 @@
     }
 
     .logo_banner-bottom {
-
-
         h2 {
             font-size: 2.5rem;
             letter-spacing: 1.4rem;
             text-indent: 1.5rem;
 
+        }
+    }
+
+    .headshot {
+        width: 25rem;
+        height: 20rem;
+
+        &.donna {
+            background: linear-gradient(to left, transparent 70%, black 100%), url(/assets/images/donna_transparent.png);
+            background-position: bottom left;
+            left: 0;
+            right: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .floating-pin {
+            bottom: 1rem;
+            right: 4rem;
+
+            .meta {
+                .line-1 {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+
+    .office_background {
+        width: 100%;
+        background-size: cover;
+        background-position: bottom right;
+
+        .seg-content {
+            margin: auto 0;
+            padding: 0 2rem;
+        }
+    }
+
+    .scroll-segments {
+        right: 1rem;
+
+        >.section {
+            &.active {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 260px) {
+    .banner {
+        margin-top: 0;
+        padding-top: 0;
+
+        >div {
+            width: 100vw;
+            box-sizing: border-box;
+        }
+
+        .logo_banner-top {
+
+            background: var(--brand-light);
+            border: 2px solid var(--brand-light);
+
+            h1 {
+                text-indent: 0;
+                font-size: 4rem;
+                letter-spacing: initial;
+            }
+        }
+
+        .headshot {
+            width: 15rem;
+            height: 35rem;
+        }
+    }
+
+    .logo_banner-bottom {
+        h2 {
+            font-size: 3rem;
+            letter-spacing: 1rem;
+            text-indent: 1rem;
         }
     }
 }
