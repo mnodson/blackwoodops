@@ -70,16 +70,13 @@
 
 .scroller {
 
-
     section {
-        scroll-snap-align: start;
-        height: 100vh;
-
         &:first-child {
             display: grid;
             align-content: stretch;
             align-items: stretch;
             grid-template-rows: 0fr 2fr;
+            height: 100vh;
         }
 
         &:not(:first-child) {
@@ -98,6 +95,18 @@
     position: relative;
 
     color: #fff;
+}
+
+.seg-main {
+    color: #fff;
+
+    margin: 5rem;
+    font-size: 2rem;
+
+    .highlight-text {
+        color: var(--brand-orange);
+        font-weight: 600;
+    }
 }
 
 .office_background {
@@ -253,6 +262,14 @@
     }
 }
 
+footer {
+    color: var(--brand-dark);
+    padding: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    background: var(--brand-teal);
+    font-weight: 900;
+}
 
 @media only screen and (max-width: 480px) {
     .banner {
@@ -260,7 +277,7 @@
         padding-top: 0;
 
         >div {
-            width: 100vw;
+            width: 100%;
             box-sizing: border-box;
         }
 
@@ -287,7 +304,7 @@
     }
 
     .headshot {
-        width: 25rem;
+        width: auto;
         height: 20rem;
 
         &.donna {
@@ -300,14 +317,7 @@
         }
 
         .floating-pin {
-            bottom: 1rem;
-            left: 3rem;
-
-            .meta {
-                .line-1 {
-                    font-size: 2.5rem;
-                }
-            }
+            display: none;
         }
     }
 
@@ -320,6 +330,13 @@
             margin: auto 0;
             padding: 0 2rem;
         }
+    }
+
+    .seg-main {
+        color: #fff;
+    
+        margin: 2rem;
+        font-size: 2rem;
     }
 
     .scroll-segments {
@@ -340,7 +357,7 @@
         padding-top: 0;
 
         >div {
-            width: 100vw;
+            width: 100%;
             box-sizing: border-box;
         }
 
