@@ -107,6 +107,19 @@
         color: var(--brand-orange);
         font-weight: 600;
     }
+
+    ul {
+        list-style: inside;
+        padding: 0;
+        margin-left: -2rem;
+        margin-right: -2rem;
+
+        li {
+            background: #37474F;
+            padding: 0.5rem 2rem;
+            margin-bottom: 2px;
+        }
+    }
 }
 
 .office_background {
@@ -149,7 +162,7 @@
 
 .headshot {
     width: 40rem;
-    height: 60rem;
+    height: 50rem;
 
     .floating-pin {
         position: absolute;
@@ -262,12 +275,20 @@
     }
 }
 
+section {
+    &.alternate {
+        background: #263238;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
 footer {
-    color: var(--brand-dark);
-    padding: 3rem;
+    color: #9E9E9E;
+    padding: 10rem 2rem;
     text-align: center;
     font-size: 2rem;
-    background: var(--brand-teal);
+    background: #000000;
     font-weight: 900;
 }
 
@@ -309,7 +330,7 @@ footer {
 
         &.donna {
             background: linear-gradient(to left, transparent 70%, black 100%), url(/assets/images/donna_transparent.png);
-            background-position: bottom left;
+            background-position: bottom right;
             left: 0;
             right: 0;
             background-size: contain;
@@ -334,9 +355,16 @@ footer {
 
     .seg-main {
         color: #fff;
-    
+
         margin: 2rem;
         font-size: 2rem;
+
+
+
+        ul {
+            list-style: none;
+        }
+
     }
 
     .scroll-segments {
