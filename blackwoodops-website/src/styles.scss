@@ -6,8 +6,16 @@ html, body {
     background: #000;
 }
 
+body {
+    position: fixed;
+    overflow-y: scroll;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
 html {
-    scroll-snap-type: y mandatory;
+    width: 100%;
+    overflow: hidden;
 }
 
 :root {

@@ -1,6 +1,22 @@
 :host {
     display: block;
     height: inherit;
+
+
+    --clr-purple: rgb(63, 81, 181);
+    --clr-purple-400: rgb(63, 81, 181, 0.6);
+
+    --clr-blue: rgb(33 150 243);
+    --clr-blue-400: rgb(33 150 243 / 60%);
+
+    --clr-orange: rgb(255 152 0);
+    --clr-orange-400: rgb(255 152 0 / 60%);
+
+    --clr-green: rgb(76 175 80);
+    --clr-green-400: rgb(76 175 80 / 60%);
+
+    --clr-pink: rgb(233 30 99);
+    --clr-pink-400: rgb(233 30 99 / 60%);
 }
 
 .logo_circle {
@@ -30,7 +46,6 @@
         border: 2px solid var(--brand-light);
 
         h1 {
-            font-family: 'Alumni Sans Pinstripe', sans-serif;
             font-family: 'Chivo Mono', monospace;
             background: url('/assets/images/background_forrest.webp');
             background-attachment: fixed;
@@ -73,10 +88,8 @@
     section {
         &:first-child {
             display: grid;
-            align-content: stretch;
-            align-items: stretch;
             grid-template-rows: 0fr 2fr;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         &:not(:first-child) {
@@ -100,7 +113,7 @@
 .seg-main {
     color: #fff;
 
-    margin: 5rem;
+    margin: 5rem 20vw;
     font-size: 2rem;
 
     .highlight-text {
@@ -123,19 +136,17 @@
 }
 
 .office_background {
-    background: radial-gradient(circle, rgba(0, 0, 0, 0) -60%, rgb(0, 0, 0) 70%), url(/assets/images/office_background.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100%;
-    margin: 0rem auto;
-    background-position: center;
-    width: 70%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) -60%, rgb(0, 0, 0) 70%), url(/assets/images/office_background.jpg) no-repeat center center fixed;
     position: relative;
+    min-height: var(--original-viewport-height);
+    background-size: contain;
+    height: 100%;
+    overflow: hidden;
 
     .seg-content {
         color: #F5F5F5;
-        margin: auto 10rem;
-        padding-top: 5rem;
+        margin: auto 20vw;
+        padding: 5rem 0;
 
         h1 {
             font-size: 3rem;
@@ -160,92 +171,126 @@
     }
 }
 
-.headshot {
-    width: 40rem;
-    height: 50rem;
 
-    .floating-pin {
-        position: absolute;
-        bottom: 3rem;
-        right: -6rem;
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        flex-direction: row;
 
-        >.reveal {
-            transition: all 0.25s;
-            opacity: 0;
-            transform: translateX(4rem);
-            font-size: 2rem;
-            color: #fff;
-            font-weight: 900;
-            position: absolute;
+.memberships__container {
+    margin-top: 5rem;
+
+    .programs {
+        margin-top: 2rem;
+        gap: 2rem;
+        display: grid;
+
+        &.programs--adhoc {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         }
 
-        >.meta {
-            transition: all 0.25s;
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        >.icon {
-            transition: all 0.25s;
-        }
-
-        &:hover {
-            >.icon {
-                transform: rotateY(180deg);
-            }
-
-            >.meta {
-                transform: translateX(4rem);
-                opacity: 0;
-            }
-
-            >.reveal {
-                transform: translateX(5rem);
-                opacity: 1;
-            }
-        }
-
-        .icon {
-            width: 4rem;
-            height: 4rem;
-            background: url(/assets/images/contact_icon_purple.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            border: 2px solid #B0BEC5;
-            border-radius: 10rem;
-        }
-
-        .meta {
-            display: flex;
-            flex-direction: column;
-            gap: 0rem;
-
-            .line-1 {
-                font-size: 3rem;
-                color: #fff;
-                font-weight: 900;
-            }
-
-            .line-2 {
-                font-size: 2.5rem;
-                color: #9E9E9E;
-                font-weight: 900;
-            }
+        &.programs--subscription {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         }
     }
 
-    &.donna {
-        background: linear-gradient(to right, transparent 40%, black 100%), url(/assets/images/donna_transparent.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        position: absolute;
-        right: 0%;
-        bottom: 0rem;
-        background-position: bottom right;
+    .program {
+
+        --_shadow: var(--shadow, pink);
+        --_icon: var(--icon, red);
+
+        background: #ccc;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        color: #000;
+        box-shadow: 0 0 10px 2px #444, -0.6rem -0.6rem 0 0 var(--_shadow);
+        flex: 1;
+        flex-basis: 20%;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-rows: 1fr 2fr auto;
+
+
+        .heading {
+            font-weight: 700;
+            font-size: 1.65rem;
+        }
+
+        p {
+            font-family: Roboto, sans-serif, system-ui;
+            color: #263238;
+        }
+
+        .price {
+            font-weight: 900;
+            font-size: 1.7rem;
+            text-align: right;
+
+            span {
+                color: #444;
+            }
+        }
+
+        &--ff {
+            --shadow: var(--clr-orange-400);
+        }
+
+        &--pdd {
+            --shadow: var(--clr-green-400);
+        }
+
+        &--bpv {
+            --shadow: var(--clr-blue-400);
+
+        }
+
+        &--sup {
+            --shadow: var(--clr-pink-400);
+            flex-basis: 45%;
+        }
+
+
+        &--q {
+            --shadow: var(--clr-purple-400);
+            flex-basis: 45%;
+        }
+    }
+}
+
+.sessions__container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+
+    .session {
+        background: #26404da8;
+        border-radius: 0.25rem;
+        color: #E0E0E0;
+        font-size: 1.4rem;
+        padding: 0.5rem;
+        border: 1px solid #757575;
+
+        .heading {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #9FA8DA;
+
+            + p {
+                font-family: Roboto, sans-serif, system-ui;
+                font-size: 1rem;
+            }
+        } 
+
+        &.session--guest-speaker {
+            i {
+                color: #FFC107;
+                font-size: 1.4rem;
+                margin-right: 0.25rem;
+            }
+
+            .speaker {
+                > div {
+                    text-transform: uppercase;
+                    color: #FFC107;
+                }
+            }
+        }
     }
 }
 
@@ -349,7 +394,7 @@ footer {
 
         .seg-content {
             margin: auto 0;
-            padding: 0 2rem;
+            padding: 2rem;
         }
     }
 
@@ -415,3 +460,15 @@ footer {
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .sessions__container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+     }
+  
+    .session {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }

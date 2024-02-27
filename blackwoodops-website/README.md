@@ -4,24 +4,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+In a WSL environment run `ip addr`
 
-## Code scaffolding
+Take note of the eh0 inet address something along the lines of `172.21.205.52/20` copy the ip address without the subnet mask.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In an elevated powershell window run 
 
-## Build
+`netsh interface portproxy add v4tov4 listenport=4200 listenaddress=0.0.0.0 connectport=4200 connectaddress=172.21.205.52`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Where the `connectaddress` is the ip address taken from the eh0 WSL config
 
-## Running unit tests
+Run `ng serve --host 0.0.0.0 --port 4200 --disable-host-check`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Navigate to your local IPV4 address `192.168.0.130:4200` from any device
