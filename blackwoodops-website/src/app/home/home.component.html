@@ -99,7 +99,7 @@
             <mat-expansion-panel *ngFor="let session of sessions">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
-                        <mat-icon *ngIf="session.guestSpeaker">account_circle</mat-icon>&nbsp;{{session.heading}}
+                        <span class="gs-icon" *ngIf="session.guestSpeaker"><mat-icon >account_circle</mat-icon>&nbsp;</span>{{session.heading}}
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <p style="background: #EEEEEE;

@@ -315,8 +315,10 @@
         .sessions {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr;
-
-
+            margin: 0 0.5rem;
+            .gs-icon {
+                display: inherit;
+            }
         }
     }
 

@@ -5,3 +5,9 @@
     margin-top: 3rem;
     box-sizing: border-box;
 }
+
+@media screen and (max-width: 768px) {
+    .main-bkg {
+        border-radius: 0;
+    }
+}
