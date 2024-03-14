@@ -355,10 +355,12 @@ footer {
         .seg-content {
             padding-left: 0;
             padding-right: 0;
+            padding-top: 0;
 
             .main-nav {
                 flex-direction: column;
                 width: 100%;
+                margin-top: 0;
             }
         }
     }
