@@ -162,23 +162,26 @@
             margin: 1rem auto;
             width: 30vw;
             align-items: center;
-            border: 2px solid;
             background: #EEEEEE;
-            > div, a {
+            overflow: hidden;
+
+            >div,
+            a {
                 padding: 1rem;
                 color: #444;
                 flex: 1;
                 text-align: center;
                 cursor: pointer;
                 text-decoration: none;
-                
+                width: 100%;
+
                 &:hover {
                     background: #fff;
                 }
             }
         }
 
-        
+
     }
 }
 
@@ -348,6 +351,15 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    .office_background {
+        .seg-content {
+            .main-nav {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+    }
+
     .sessions__container {
 
         .sessions {
