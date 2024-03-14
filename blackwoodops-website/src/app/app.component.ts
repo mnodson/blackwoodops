@@ -1,5 +1,7 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +9,5 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 })
 export class AppComponent {
 
+  
 }

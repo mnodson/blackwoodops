@@ -2,8 +2,7 @@
   <section #section1>
     <div class="main__container">
       <div class="banner">
-
-        <div class="logo_banner-top">
+        <div class="logo_banner-top" [routerLink]="['home']">
           <h1>BLACKWOOD</h1>
         </div>
 
@@ -14,211 +13,15 @@
     </div>
     <div class="seg office_background">
       <div class="seg-content">
-        <h1>Tackling operations and solving problems for your business</h1>
-        <div class="bullet-points horizontal">
-          <h2>Efficient</h2>
-          <h2>Effective</h2>
-          <h2>Delivered</h2>
+        <div class="main-nav">
+          <a href="mailto:donna@blackwoodops.com?subject=Let's connect" class="nav-item">Contact Us</a>
+          <div class="nav-item" [routerLink]="['expertise']">More about us</div>
+          <div class="nav-item" [routerLink]="['certs']">Certifications</div>
         </div>
-
-        <div class="memberships__container">
-          <h2>Shorter, focused programs</h2>
-
-          <div class="programs programs--adhoc">
-            <div class="program program--ff">
-              <div class="heading">Financial forecast</div>
-              <p>
-                Includes one financial forecast and 4 weekly group sessions.
-              </p>
-              <div class="price"><span>$</span>&nbsp;700</div>
-            </div>
-
-            <div class="program program--pdd">
-              <div class="heading">Pitch deck development</div>
-              <p>
-                Includes one pitch-deck (PPT) and 4 weekly group sessions.
-              </p>
-              <div class="price"><span>$</span>&nbsp;850</div>
-            </div>
-
-            <div class="program program--bpv">
-              <div class="heading">Business plan development</div>
-              <p>Includes one business plan and 4 weekly group sessions.</p>
-              <div class="price"><span>$</span>&nbsp;1,750</div>
-            </div>
-          </div>
-
-          <h2>Longer, specialized membership programs</h2>
-
-          <div class="programs programs--subscription">
-            <div class="program program--q">
-              <div class="heading">Quarterly</div>
-              <p>Includes 24 weekly group sessions (can be engaged on a rolling basis - so 12 weeks from whenever they start).</p>
-              <div class="price"><span>$</span>&nbsp;300</div>
-            </div>
-
-            <div class="program program--sup">
-              <div class="heading">Start-up package</div>
-              <p>Includes business plan, financial forecast, pitch deck, 24 weekly group sessions, and 3 hours of personal coaching sessions.</p>
-              <div class="price"><span>$</span>&nbsp;3,450</div>
-            </div>
-          </div>
-        </div>
-
-        <h2>Sessions, and what to expect</h2>
-        <div class="sessions__container">
-          <div class="session">
-            <div class="heading">Business plan</div>
-            <p>sections, key data, how to write it and how to use it, what a reasonable cost is if you are going to outsource</p>
-          </div>
-          <div class="session">
-            <div class="heading">Pitch deck</div>
-            <p>who is it for (investors vs customers), branding, market position, what a reasonable cost is if you are going to outsource</p>
-          </div>
-          <div class="session">
-            <div class="heading">Financial forecast</div>
-            <p>how to put it in writing, making it detailed enough without being too cumbersome, how to structure for updates, what a reasonable cost is if you are going to outsource</p>
-          </div>
-          <div class="session">
-            <div class="heading">Risk management</div>
-            <p>biggest threats, mitigations, contingencies</p>
-          </div>
-          <div class="session session--guest-speaker">
-            <div class="heading">Funding your business</div>
-            <p>investors, loans, grants, traditional vs non-traditional approaches</p>
-            <div class="speaker"><div><i class="fa-solid fa-microphone-lines"></i> Guest speaker</div>Reagan Rodriguez, 5th Ave Capital</div>
-          </div>
-          <div class="session">
-            <div class="heading">Ramping up operations</div>
-            <p>checklists, dependencies, what's needed vs what can wait</p>
-          </div>
-          <div class="session">
-            <div class="heading">What's on your plate</div>
-            <p>strengths, weaknesses, things you don't like</p>
-          </div>
-          <div class="session">
-            <div class="heading">Early-stage leadership</div>
-            <p>part-time vs full-time, ownership, compensation</p>
-          </div>
-          <div class="session">
-            <div class="heading">Managing finances</div>
-            <p>bank accounts, credit card, bookkeeping, taxes</p>
-          </div>
-          <div class="session">
-            <div class="heading">Business creation</div>
-            <p>establishing your business entity, what types of structures exist, how to go about this</p>
-          </div>
-        </div>
+        <router-outlet></router-outlet>
       </div>
     </div>
-
-
-  </section>
-
-  <section #section2 class="alternate">
-    <div class="seg-main">
-
-      <h3>Summary</h3>
-      <p>A business operations consultancy with deep expertise and a proven track record of success.
-        Breadth of operational experience in a global environment with companies ranging from startups to Fortune 500.
-      </p>
-      <p>
-        Clients sectors encompass service-based, SaaS, manufacturing, financial, and retail organizations.
-      </p>
-      <p>
-        Passionate about driving business forward through strategic enablement: <span class="highlight-text">evolving
-          challenges to become opportunities.</span>
-      </p>
-
-
-      <h3>Expertise</h3>
-      <p>
-        Business operations management, executive leadership, management consulting, process design, high-profile
-        project management, business transformation, business plan & strategy development, financial forecasting,
-        security audit preparation & management, budgets, policy and procedure writing. The agency has strong experience
-        working with C-suite executives to solve core business challenges and lead change management.
-      </p>
-      <p>
-        Extensive work with start-ups and rapid growth organizations, as well as businesses driving significant change.
-      </p>
-
-      <h3>Domains</h3>
-
-      <p>
-        Primarily service-based and SaaS companies, with additional process design/ redesign in other sectors.
-      </p>
-      <p>
-        Examples: Law firms, digital agencies, marketing agencies, consulting firms, banking/ finance, healthcare,
-        technology, automotive, higher education, retail, hospitality, events, and franchise organizations.
-      </p>
-
-      <h3>Security Audits</h3>
-      <p>
-        Preparing for and managing the internal evidence collection for cybersecurity audits and assessments. Expert
-        level knowledge of HITRUST and SOC 2 frameworks, as well as HIPAA, GDPR, and state-level data privacy
-        requirements. Recommendations for a third-party audit firm can be provided as required; Blackwood Operations
-        does not offer services as an auditor.
-      </p>
-
-      <h3>
-        Longer-term engagements
-      </h3>
-
-      <p>
-        Fractional roles such as VP Operations/ Director of Operations/ COO, management for tech solution sourcing and
-        implementation, process design/ redesign along with documentation and training material/ portal.
-      </p>
-
-      <h3>Additional info</h3>
-      <p>Track record of success building and leading teams. Expert at documenting policies and procedures in ways that
-        are easy to access and manage (I.e. SharePoint portals and team sites).</p>
-
-      <h3>
-        Risk Management
-      </h3>
-      <p>
-        Leading enterprise risk management, including evolving risk strategy, business continuity plans, comprehensive
-        risk management conversations across the business, advocating for improvements, administration of the risk
-        repository, and executive dashboards for PLC Board consumption and publication.
-      </p>
-    </div>
-
-    <div class="seg-main">
-
-      <h3>Functional Expertise</h3>
-
-      <ul>
-        <li>Operations management, process design & re-engineering, KPIs</li>
-        <li>Mergers and acquisitions (M&A), high-profile project management</li>
-        <li>Vendor management, operations software selection / implementation</li>
-        <li>Sales operations - RFPs, CRM, SOWs, customer onboarding</li>
-        <li>Writing business plans, pitch decks, and board proposals</li>
-        <li>ERM, GRC, ESG, regulatory compliance, corporate publications & reporting</li>
-        <li>Security audits & accreditation (HITRUST, AICPA - SOC 1 & SOC 2)</li>
-        <li>Business continuity, crisis management</li>
-        <li>Forecasting, budget management, P&L</li>
-      </ul>
-
-      <h3>Certifications</h3>
-
-      <ul>
-        <li>GRCP - Governance, Risk and Compliance Professional</li>
-        <li>IDPP - Integrated Data Privacy Professional</li>
-        <li>CSSBB - Certified Six Sigma Black Belt</li>
-      </ul>
-
-
-      <h3>Application Knowledge</h3>
-      <p>
-        Expert level user across Microsoft Office applications: Word, Excel, PowerPoint (PPT), Visio, Project (& Project
-        Server), SharePoint, Aha, Smartsheet, TFS, Jira, et.al.
-      </p>
-    </div>
-
-
   </section>
 </article>
-
 <footer>
-  donna@blackwoodops.com
 </footer>

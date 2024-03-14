@@ -1,0 +1,261 @@
+:host {
+    >h1 {
+        font-size: 2.5rem;
+        font-weight: 100;
+        font-family: 'Alumni Sans Pinstripe';
+        text-align: center;
+    }
+}
+
+.bullet-points {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--brand-teal);
+    justify-content: center;
+    line-height: 0;
+    font-family: 'Alumni Sans Pinstripe';
+    margin-top: 1rem;
+
+    >h2 {
+        margin-top: 0;
+    }
+
+    &.horizontal {
+        flex-direction: row;
+    }
+}
+
+.summary {
+    background: rgba(38, 50, 56, 0.7490196078);
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.cta {
+    background: #5296a5;
+    margin-top: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 0.5rem;
+    color: #212121;
+    font-weight: 500;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+
+.memberships__container {
+    margin-top: 3rem;
+
+    h2 {
+        font-weight: 300;
+        white-space: pre-line;
+        font-size: 1.2rem;
+
+        i {
+            font-size: 1rem;
+            color: #607D8B;
+            font-variant: all-petite-caps;
+        }
+    }
+
+    .programs {
+        margin-top: 2rem;
+        gap: 2rem;
+        display: grid;
+
+        &.programs--adhoc {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+            +h2 {
+                margin-top: 2rem;
+            }
+        }
+
+        &.programs--subscription {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+    }
+
+    .program {
+
+        --_shadow: var(--shadow, pink);
+        --_icon: var(--icon, red);
+
+        background: #ccc;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        color: #000;
+        box-shadow: 0 0 10px 2px #444, -0.6rem -0.6rem 0 0 var(--_shadow);
+        flex: 1;
+        flex-basis: 20%;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-rows: 1fr 2fr auto;
+
+        .heading {
+            font-weight: 700;
+            font-size: 1.65rem;
+            font-family: 'Alumni Sans Pinstripe';
+        }
+
+        p {
+            font-family: Roboto, sans-serif, system-ui;
+            color: #263238;
+            font-weight: 400;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .talk {
+                color: #37474F;
+                font-weight: 600;
+                border: 1px solid #607D8B;
+                padding: 0.3rem 1rem;
+                border-radius: 0.2rem;
+                background: #ECEFF1;
+                font-family: Roboto;
+                font-size: 1rem;
+                cursor: pointer;
+                text-decoration: none;
+
+                &:hover {
+                    background: #CFD8DC;
+                }
+            }
+        }
+
+        .price {
+            font-weight: 900;
+            font-size: 1.7rem;
+            text-align: right;
+            font-family: 'Alumni Sans Pinstripe';
+
+            span {
+                color: #444;
+            }
+        }
+
+        &--ff {
+            --shadow: var(--clr-orange-400);
+        }
+
+        &--pdd {
+            --shadow: var(--clr-green-400);
+        }
+
+        &--bpv {
+            --shadow: var(--clr-blue-400);
+
+        }
+
+        &--sup {
+            --shadow: var(--clr-pink-400);
+            flex-basis: 45%;
+        }
+
+
+        &--q {
+            --shadow: var(--clr-purple-400);
+            flex-basis: 45%;
+        }
+    }
+}
+
+.sessions__container {
+    margin-top: 4rem;
+    border-top: 1px solid #BDBDBD;
+
+    h2 {
+        font-weight: 300;
+        white-space: pre-line;
+        font-size: 1.2rem;
+
+        i {
+            font-size: 1rem;
+            color: #607D8B;
+            font-variant: all-petite-caps;
+        }
+    }
+
+    .sessions {
+
+        .guest-speaker {
+            border-left: 3px solid #607D8B;
+
+            .announce {
+                color: #607D8B;
+                font-size: 1rem;
+                padding-left: 1rem;
+            }
+
+            .speaker_name {
+                font-weight: 500;
+                padding-left: 1rem;
+                margin-top: 1rem;
+            }
+
+            .speaker_org {
+                color: #757575;
+                padding-left: 1rem;
+            }
+        }
+    }
+
+    .session {
+        background: rgba(38, 64, 77, 0.6588235294);
+        border-radius: 0.25rem;
+        color: #E0E0E0;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        border: 1px solid #757575;
+        height: 1.8rem;
+        max-height: 10rem;
+        min-height: 1.8rem;
+        overflow: hidden;
+
+        transition: height 0.25s ease-out;
+
+        &:hover {
+            height: 100%;
+        }
+
+        .heading {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #BDBDBD;
+            font-family: 'Alumni Sans Pinstripe';
+
+            +p {
+                font-family: Roboto, sans-serif, system-ui;
+                font-size: 1rem;
+                font-weight: 300;
+            }
+        }
+
+        &.session--guest-speaker {
+            i {
+                color: #FFC107;
+                font-size: 1.4rem;
+                margin-right: 0.25rem;
+            }
+
+            .speaker {
+                font-family: 'Alumni Sans Pinstripe';
+
+                >div {
+                    text-transform: uppercase;
+                    color: #FFC107;
+                }
+            }
+        }
+    }
+}

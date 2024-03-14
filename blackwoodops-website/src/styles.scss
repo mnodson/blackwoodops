@@ -1,9 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body {
-    font-family: 'Alumni Sans Pinstripe', sans-serif;
+html,
+body {
+    font-family: Roboto, sans-serif, system-ui;
+    font-weight: 300;
     margin: 0;
     background: #000;
+    scroll-padding-top: 1rem;
+    width: 100%;
 }
 
 body {
@@ -24,4 +28,14 @@ html {
     --brand-light: #fffcf2;
     --brand-dark: #282c28;
     --brand-teal: #5296a5;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }

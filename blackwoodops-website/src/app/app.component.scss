@@ -41,7 +41,7 @@
     }
 
     .logo_banner-top {
-
+        cursor: pointer;
         background: var(--brand-light);
         border: 2px solid var(--brand-light);
 
@@ -75,6 +75,7 @@
         font-size: clamp(1rem, -0.875rem + 4.633vw, 3rem);
         letter-spacing: clamp(0rem, -1.1rem + 2.933vw, 3.8rem);
         text-indent: clamp(0rem, -1.1rem + 2.233vw, 2.4rem);
+        font-family: Alumni Sans Pinstripe;
     }
 }
 
@@ -114,11 +115,11 @@
     color: #fff;
 
     margin: 5rem 20vw;
-    font-size: 2rem;
+    font-size: 1rem;
 
     .highlight-text {
         color: var(--brand-orange);
-        font-weight: 600;
+        font-weight: 300;
     }
 
     ul {
@@ -146,154 +147,40 @@
     .seg-content {
         color: #F5F5F5;
         margin: auto 20vw;
-        padding: 5rem 0;
+        margin-bottom: 2.5rem;
 
         h1 {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-
-        .bullet-points {
-            display: flex;
-            gap: 1rem;
-            font-size: 1.5rem;
-            color: var(--brand-teal);
-            line-height: 0;
-
-            >h2 {
-                margin-top: 0;
-            }
-
-            &.horizontal {
-                flex-direction: row;
-            }
-        }
-    }
-}
-
-
-
-.memberships__container {
-    margin-top: 5rem;
-
-    .programs {
-        margin-top: 2rem;
-        gap: 2rem;
-        display: grid;
-
-        &.programs--adhoc {
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        }
-
-        &.programs--subscription {
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        }
-    }
-
-    .program {
-
-        --_shadow: var(--shadow, pink);
-        --_icon: var(--icon, red);
-
-        background: #ccc;
-        padding: 1rem;
-        border-radius: 0.4rem;
-        color: #000;
-        box-shadow: 0 0 10px 2px #444, -0.6rem -0.6rem 0 0 var(--_shadow);
-        flex: 1;
-        flex-basis: 20%;
-        box-sizing: border-box;
-        display: grid;
-        grid-template-rows: 1fr 2fr auto;
-
-
-        .heading {
-            font-weight: 700;
-            font-size: 1.65rem;
-        }
-
-        p {
-            font-family: Roboto, sans-serif, system-ui;
-            color: #263238;
-        }
-
-        .price {
-            font-weight: 900;
-            font-size: 1.7rem;
-            text-align: right;
-
-            span {
-                color: #444;
-            }
-        }
-
-        &--ff {
-            --shadow: var(--clr-orange-400);
-        }
-
-        &--pdd {
-            --shadow: var(--clr-green-400);
-        }
-
-        &--bpv {
-            --shadow: var(--clr-blue-400);
-
-        }
-
-        &--sup {
-            --shadow: var(--clr-pink-400);
-            flex-basis: 45%;
-        }
-
-
-        &--q {
-            --shadow: var(--clr-purple-400);
-            flex-basis: 45%;
-        }
-    }
-}
-
-.sessions__container {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(5, 1fr);
-
-    .session {
-        background: #26404da8;
-        border-radius: 0.25rem;
-        color: #E0E0E0;
-        font-size: 1.4rem;
-        padding: 0.5rem;
-        border: 1px solid #757575;
-
-        .heading {
             font-size: 2rem;
-            font-weight: 600;
-            color: #9FA8DA;
+            font-weight: 100;
+            text-align: center;
+        }
 
-            + p {
-                font-family: Roboto, sans-serif, system-ui;
-                font-size: 1rem;
-            }
-        } 
-
-        &.session--guest-speaker {
-            i {
-                color: #FFC107;
-                font-size: 1.4rem;
-                margin-right: 0.25rem;
-            }
-
-            .speaker {
-                > div {
-                    text-transform: uppercase;
-                    color: #FFC107;
+        .main-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 1rem auto;
+            width: 30vw;
+            align-items: center;
+            border: 2px solid;
+            background: #EEEEEE;
+            > div, a {
+                padding: 1rem;
+                color: #444;
+                flex: 1;
+                text-align: center;
+                cursor: pointer;
+                text-decoration: none;
+                
+                &:hover {
+                    background: #fff;
                 }
             }
         }
+
+        
     }
 }
-
 
 .scroll-segments {
     position: fixed;
@@ -365,7 +252,6 @@ footer {
             font-size: 2.5rem;
             letter-spacing: 1.4rem;
             text-indent: 1.5rem;
-
         }
     }
 
@@ -402,7 +288,7 @@ footer {
         color: #fff;
 
         margin: 2rem;
-        font-size: 2rem;
+        font-size: 1rem;
 
 
 
@@ -463,12 +349,15 @@ footer {
 
 @media screen and (max-width: 768px) {
     .sessions__container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-     }
-  
-    .session {
-      grid-column: auto;
-      grid-row: auto;
+
+        .sessions {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
     }
-  }
+
+    .session {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
