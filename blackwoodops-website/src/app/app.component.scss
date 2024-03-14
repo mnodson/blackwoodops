@@ -353,6 +353,9 @@ footer {
 @media screen and (max-width: 768px) {
     .office_background {
         .seg-content {
+            padding-left: 0;
+            padding-right: 0;
+
             .main-nav {
                 flex-direction: column;
                 width: 100%;
@@ -362,9 +365,15 @@ footer {
 
     .sessions__container {
 
+        h2 {
+            margin-left: 1rem;
+        }
+        
         .sessions {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr;
+
+
         }
     }
 
