@@ -7,16 +7,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatMenuModule } from '@angular/material/menu';
 import { ExpertiseComponent } from './expertise/expertise.component';
 import { CertsComponent } from './certs/certs.component';
 import { HomeComponent } from './home/home.component';
+import { IdeaProsComponent } from './idea-pros/idea-pros.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExpertiseComponent,
     CertsComponent,
-    HomeComponent
+    HomeComponent,
+    IdeaProsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MatExpansionModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

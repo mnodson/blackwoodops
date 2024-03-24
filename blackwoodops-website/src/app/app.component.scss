@@ -178,6 +178,20 @@
                 &:hover {
                     background: #fff;
                 }
+
+                &.icon {
+                    padding: 1rem 0;
+                    flex: 0.5;
+                    color: #5296a5;
+                }
+            }
+
+            .nav-item {
+                img {
+                    width: 1rem;
+                    margin-right: 0.5rem;
+                    vertical-align: sub;
+                }
             }
         }
 
@@ -370,7 +384,7 @@ footer {
         h2 {
             margin-left: 1rem;
         }
-        
+
         .sessions {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr;

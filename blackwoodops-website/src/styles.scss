@@ -39,3 +39,11 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.mat-mdc-menu-item-text {
+    img {
+        height: 1.5rem;
+        margin-right: 0.5rem;
+        vertical-align: sub;
+    }
+}

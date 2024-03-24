@@ -14,10 +14,16 @@
     <div class="seg office_background">
       <div class="seg-content">
         <div class="main-nav">
-          <a class="nav-item" [routerLink]="['/']">Home</a>
-          <a class="nav-item" [routerLink]="['expertise']">More about us</a>
+          <a class="nav-item icon" [routerLink]="['/']"><i class="fa-solid fa-house"></i></a>
+          <a class="nav-item" [matMenuTriggerFor]="menu">Partnerships</a>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="['ideapros']">
+              <img src="/assets/images/IdeaPros-Icon.png" />
+              <span>IdeaPros</span></button>
+          </mat-menu>
+          <a class="nav-item" [routerLink]="['expertise']">About us</a>
           <a class="nav-item" [routerLink]="['certs']">Certifications</a>
-          <a href="mailto:donna@blackwoodops.com?subject=Let's connect" class="nav-item">Contact Us</a>
+          <!-- <a href="mailto:donna@blackwoodops.com?subject=Let's connect" class="nav-item">Contact Us</a> -->
         </div>
         <router-outlet></router-outlet>
       </div>

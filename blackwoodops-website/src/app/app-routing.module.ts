@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CertsComponent } from './certs/certs.component';
 import { ExpertiseComponent } from './expertise/expertise.component';
 import { HomeComponent } from './home/home.component';
+import { IdeaProsComponent } from './idea-pros/idea-pros.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,10 @@ const routes: Routes = [
     component: ExpertiseComponent,
     path: 'expertise'
   },
-
+  {
+    component: IdeaProsComponent,
+    path: 'ideapros'
+  },
   {
     path: '**',
     redirectTo: 'home'
