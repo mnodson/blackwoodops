@@ -30,10 +30,30 @@
     color: #ccc;
 }
 
+.expander {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 10rem;
+
+    .sheet {
+        background: #2632389e;
+        height: 20rem;
+        transform: skewX(350deg);
+        border: 1px solid #fff;
+
+        >div {
+            transform: skewX(10deg);
+            padding: 2rem;
+        }
+    }
+}
+
 .offerings {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
 
     >div {
         box-sizing: border-box;
@@ -43,10 +63,42 @@
         display: flex;
         flex-direction: column;
         flex: 1;
+        flex-basis: 45%;
         padding-bottom: 0;
-
+        transition: height 0.25s ease-in-out;
+        max-height: 100vh;
         display: grid;
         grid-template-rows: 3rem 1fr 4rem 10rem;
+
+        &.collapsed {
+            height: 100%;
+        }
+
+        >div.heading {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-left: -2rem;
+            margin-right: -2rem;
+            margin-top: -1.5rem;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            padding: 1.3rem;
+            cursor: pointer;
+
+            &:hover {
+                background: #311b9242;
+            }
+
+            h2 {
+                margin: 0;
+            }
+        }
+
+        &.collapsed {
+            height: 100%;
+        }
 
         &:nth-child(1) {
             background: linear-gradient(0deg, #00BCD4, transparent);
@@ -68,15 +120,19 @@
             height: 100%;
             background: rgba(96, 125, 139, 0.55);
             margin-left: -2rem;
-            padding-left: 2rem;
             box-sizing: border-box;
             margin-right: -2rem;
-            padding-right: 2rem;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
             margin-bottom: 0;
             line-height: 1.5rem;
             border-top: 1px solid #ccc;
+            transition: height 0.25s ease-in-out;
+            box-sizing: border-box;
+            overflow: hidden;
+
+            &.collapsed {
+                height: 0;
+                overflow: hidden;
+            }
         }
 
         p {
@@ -87,9 +143,18 @@
 
         .lead {
             .intro {
-                background: #37474F;
-                padding: 0.5rem;
-                border-radius: 0.25rem;
+                background: #FAFAFA;
+                padding: 0.5rem 1rem;
+                color: #263238;
+                font-weight: 300;
+            }
+
+            p {
+                margin-left: 1rem;
+            }
+
+            ul {
+                margin-right: 1rem;
             }
         }
 
@@ -131,6 +196,10 @@
 
             &.pm {
                 background-image: url(/assets/images/project-management.jpg);
+            }
+
+            &.pitch {
+                background-image: url(/assets/images/pitch-deck.jpg);
             }
         }
 

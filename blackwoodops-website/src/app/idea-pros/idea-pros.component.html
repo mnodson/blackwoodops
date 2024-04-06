@@ -6,16 +6,42 @@
 </div>
 
 <div class="promo">
-    This offering is made in collaboration with IdeaPros®. A fee is paid to IdeaPros® each time one of the IdeaPros®
-    partnership offerings is engaged through Blackwood Operations.
+    We've partnered with IdeaPros® to offer you a wider range of specialized partnership solutions. A referral fee
+    ensures IdeaPros® can continue dedicating their expertise to provide these valuable options.
 </div>
 
+
+<!-- <div class="expander">
+
+    <div class="sheet">
+        <div>
+            <div class="title">Project management</div>
+        </div>
+    </div>
+    <div class="sheet">
+        <div>
+            <div class="title">Financial forecast</div>
+        </div>
+    </div>
+    <div class="sheet">
+        <div>
+            <div class="title">Pitch deck</div>
+        </div>
+    </div>
+    <div class="sheet">
+        <div>
+            <div class="title">Coaching</div>
+        </div>
+    </div>
+</div> -->
+
 <div class="offerings">
-
-
-    <div>
-        <h2>Project management</h2>
-        <div class="content">
+    <div [class.collapsed]="getState('pm')">
+        <div class="heading" (click)="toggleState('pm')">
+            <h2>Project management</h2>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="content" [class.collapsed]="getState('pm')">
             <div class="lead">
                 <div class="intro">
                     Alternatively, you can engage a member of our team to deliver strong project management,
@@ -66,9 +92,12 @@
         <div class="cost">$99 /hr</div>
         <div class="image pm"></div>
     </div>
-    <div>
-        <h2>Financial forecast</h2>
-        <div class="content">
+    <div [class.collapsed]="getState('forcast')">
+        <div class="heading" (click)="toggleState('forecast')">
+            <h2>Financial forecast</h2>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="content" [class.collapsed]="getState('forecast')">
             <div class="lead">
                 <div class="intro">
                     Designed within an Excel workbook.
@@ -114,9 +143,60 @@
         <div class="image excel">
         </div>
     </div>
-    <div>
-        <h2>Coaching</h2>
-        <div class="content">
+    <div [class.collapsed]="getState('pitch')">
+        <div class="heading" (click)="toggleState('pitch')">
+            <h2>Pitch deck</h2>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="content" [class.collapsed]="getState('pitch')">
+            <div class="lead">
+                <div class="intro">
+                    By leveraging the IdeaPros® partner program framework, this service delivers tailored pitch decks
+                    with a clear focus on partnership value and success.
+                </div>
+
+                <p>Expertise and Experience</p>
+                <ul>
+                    <li>Proven frameworks: Leverages successful pitch deck structures and best practices tailored
+                        specifically for attracting partners.</li>
+                    <li>Partner-focused messaging: Ensures the deck effectively communicates the value proposition and
+                        benefits for potential partners.</li>
+                </ul>
+
+                <p>Efficiency and Speed</p>
+                <ul>
+                    <li>Streamlined process: Utilizing a partner program framework provides a clear roadmap for content
+                        development, saving time and effort.</li>
+                    <li>Rapid turnaround: A structured approach enables the service to create compelling pitch decks
+                        with an efficient timeline.</li>
+                </ul>
+
+                <p>Customization and Collaboration</p>
+                <ul>
+                    <li>Tailored content: While using a framework, the service will work with you to incorporate your
+                        startup's unique story and partnership opportunities.</li>
+                    <li>Iterative approach: Provides opportunities for feedback and revisions to ensure the final pitch
+                        deck accurately reflects your partnership vision.</li>
+                </ul>
+
+                <p>Professionalism and Impact</p>
+                <ul>
+                    <li>Polished design: Delivers a visually appealing and professionally formatted deck, enhancing your
+                        credibility in front of potential partners.</li>
+                    <li>Compelling narrative: The focus on partner programs ensures a strong narrative that resonates
+                        with partners and increases your chances of successful collaborations.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="cost">$1,045</div>
+        <div class="image pitch"></div>
+    </div>
+    <div [class.collapsed]="getState('coaching')">
+        <div class="heading" (click)="toggleState('coaching')">
+            <h2>Coaching</h2>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="content" [class.collapsed]="getState('coaching')">
             <div class="lead">
                 <div class="intro">
                     Based on an as needed basis. You can engage Blackwood Operations to drive the startup process. We
@@ -156,7 +236,7 @@
     </div>
 
 
-    
+
 </div>
 
 <div class="contact">
