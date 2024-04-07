@@ -12,10 +12,6 @@ export class IdeaProsComponent {
 
   toggleState(section: string) {
 
-    this.resetAllOtherStates(section);
-
-
-
     if (this.componentStates.has(section)) {
       const currentValue = this.componentStates.get(section);
       this.componentStates.set(section, !currentValue);
