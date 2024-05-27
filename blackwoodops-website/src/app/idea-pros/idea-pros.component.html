@@ -1,247 +1,324 @@
-<div class="hero-block">
+<section id="main" class="wrapper">
+    <div class="inner">
+        <div class="hero-block">
 
-    <h1>In partnership with</h1>
+            <h1>In partnership with</h1>
 
-    <div class="logo idea-pros"></div>
-</div>
+            <div class="logo idea-pros"></div>
+        </div>
 
-<div class="promo">
-    We've partnered with IdeaPros® to offer you a wider range of specialized partnership solutions. A referral fee
-    ensures IdeaPros® can continue dedicating their expertise to provide these valuable options.
-</div>
-
-
-<!-- <div class="expander">
-
-    <div class="sheet">
-        <div>
-            <div class="title">Project management</div>
+        <div class="promo">
+            We've partnered with IdeaPros® to offer you a wider range of specialized partnership solutions.
+            A referral fee ensures IdeaPros® can continue dedicating their expertise to provide these valuable options.
         </div>
     </div>
-    <div class="sheet">
-        <div>
-            <div class="title">Financial forecast</div>
-        </div>
-    </div>
-    <div class="sheet">
-        <div>
-            <div class="title">Pitch deck</div>
-        </div>
-    </div>
-    <div class="sheet">
-        <div>
-            <div class="title">Coaching</div>
-        </div>
-    </div>
-</div> -->
 
-<div class="offerings">
-    <div [class.collapsed]="getState('pm')">
-        <div class="heading" (click)="toggleState('pm')">
-            <h2>Project management</h2>
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
-        <div class="content" [class.collapsed]="getState('pm')">
-            <div class="lead">
+    <section class="offerings">
+        <div class="packages">
+            <section [ngClass]="{'active': showPackageDetails === 'project-management'}">
+                <h3>Project management</h3>
                 <div class="intro">
-                    Alternatively, you can engage a member of our team to deliver strong project management,
-                    tracking
-                    deliverables to milestones, and creating regular status reports.
+                    You can engage a member of our team to deliver strong project management,
+                    tracking deliverables to milestones, and creating regular status reports.
                 </div>
-                <p>Focus and Accountability</p>
-                <ul>
-                    <li>Dedicated resource: A team member is solely focused on project management for your startup,
-                        ensuring
-                        consistent progress and attention to detail.</li>
-                    <li>Ownership: The project manager takes responsibility for driving deliverables and meeting
-                        milestones,
-                        increasing accountability.</li>
+                <ul class="actions">
+                    <li>
+                        <a (click)="setPackageDetails('project-management')" class="button">More Info</a>
+                    </li>
                 </ul>
+                <div class="cost">$125 /hr</div>
+            </section>
 
-                <p>Risk Mitigation and Problem Solving</p>
-                <ul>
-                    <li>Proactive identification of issues: Regular tracking helps spot potential risks early, allowing
-                        for
-                        timely adjustments to keep the project on schedule.</li>
-                    <li>Obstacle navigation: The project manager proactively identifies and addresses roadblocks,
-                        ensuring
-                        smooth progress.</li>
+            <section [ngClass]="{'active': showPackageDetails === 'financial-forecast'}">
+                <h3>Financial forecast</h3>
+                <div class="intro">
+                    This Excel-based solution simplifies startup management with user-friendly tools, automatic
+                    calculations, and clear dashboards. Easily adapt the workbook as your company grows.
+                </div>
+                <ul class="actions">
+                    <li>
+                        <a (click)="setPackageDetails('financial-forecast')" class="button">More Info</a>
+                    </li>
                 </ul>
+                <div class="cost">$975</div>
+            </section>
 
-                <p>Transparency and Communication</p>
-                <ul>
-                    <li>Clear visibility: Regular status reports provide essential updates on deliverables, timelines,
-                        and
-                        budget.</li>
-                    <li>Stakeholder alignment: Transparent communication with stakeholders minimizes surprises and
-                        manages
-                        expectations effectively.</li>
+            <section [ngClass]="{'active': showPackageDetails === 'pitch-deck'}">
+                <h3>Pitch deck</h3>
+                <div class="intro">
+                    By leveraging the IdeaPros® partner program framework, this service delivers tailored pitch
+                    decks with a clear focus on partnership value and success.
+                </div>
+                <ul class="actions">
+                    <li>
+                        <a (click)="setPackageDetails('pitch-deck')" class="button">More Info</a>
+                    </li>
                 </ul>
+                <div class="cost">$1,045</div>
+            </section>
 
-                <p>Optimized Resource Utilization</p>
-                <ul>
-                    <li>Efficient task allocation: The project manager ensures work is delegated effectively within your
-                        team, optimizing the use of everyone's skills and time.</li>
-                    <li>Data-driven decision-making: Status reports and tracking metrics help make informed decisions
-                        about
-                        resource allocation.</li>
+            <section [ngClass]="{'active': showPackageDetails === 'coaching'}">
+                <h3>Coaching</h3>
+                <div class="intro">
+                    Based on an as needed basis. You can engage Blackwood Operations to drive the startup
+                    process. We will establish the roadmap and necessary strategic direction.
+                </div>
+                <ul class="actions">
+                    <li>
+                        <a (click)="setPackageDetails('coaching')" class="button">More Info</a>
+                    </li>
                 </ul>
+                <div class="cost">$245 /hr</div>
+            </section>
+        </div>
+        <div class="expansion" #expansionPanel>
+            <div [ngSwitch]="showPackageDetails">
 
+                <div class="details" *ngSwitchCase="'project-management'" [@enterTrigger]="'fadeIn'">
+                    <p>Focus and Accountability</p>
+                    <ul>
+                        <li>Dedicated resource: A team member is solely focused on project management for your
+                            startup,
+                            ensuring
+                            consistent progress and attention to detail.</li>
+                        <li>Ownership: The project manager takes responsibility for driving deliverables and meeting
+                            milestones,
+                            increasing accountability.</li>
+                    </ul>
+
+                    <p>Risk Mitigation and Problem Solving</p>
+                    <ul>
+                        <li>Proactive identification of issues: Regular tracking helps spot potential risks early,
+                            allowing
+                            for
+                            timely adjustments to keep the project on schedule.</li>
+                        <li>Obstacle navigation: The project manager proactively identifies and addresses
+                            roadblocks,
+                            ensuring
+                            smooth progress.</li>
+                    </ul>
+
+                    <p>Transparency and Communication</p>
+                    <ul>
+                        <li>Clear visibility: Regular status reports provide essential updates on deliverables,
+                            timelines,
+                            and
+                            budget.</li>
+                        <li>Stakeholder alignment: Transparent communication with stakeholders minimizes surprises
+                            and
+                            manages
+                            expectations effectively.</li>
+                    </ul>
+
+                    <p>Optimized Resource Utilization</p>
+                    <ul>
+                        <li>Efficient task allocation: The project manager ensures work is delegated effectively
+                            within your
+                            team, optimizing the use of everyone's skills and time.</li>
+                        <li>Data-driven decision-making: Status reports and tracking metrics help make informed
+                            decisions
+                            about
+                            resource allocation.</li>
+                    </ul>
+                </div>
+                <div class="details" *ngSwitchCase="'financial-forecast'" [@enterTrigger]="'fadeIn'">
+                    <p>Cost-effectiveness</p>
+
+                    <ul>
+                        <li>Leverages a tool most businesses already own, minimizing the need for specialized
+                            referral
+                            management software.</li>
+                        <li>Eliminates or reduces subscription fees associated with dedicated referral platforms.
+                        </li>
+                    </ul>
+
+                    <p>User-Friendliness</p>
+                    <ul>
+                        <li>Familiar interface for many users, reducing the learning curve.</li>
+                        <li>Detailed explanations of formulas demystify the process and empower users to make
+                            changes.</li>
+                    </ul>
+
+                    <p>Customizability</p>
+                    <ul>
+                        <li>Easily modify formulas and calculations to suit your business's specific needs.</li>
+                        <li>Add new functionality, tracking metrics, or reporting as your referral program evolves.
+                        </li>
+                    </ul>
+
+                    <p>Data Accessibility</p>
+                    <ul>
+                        <li>Referral data is stored directly within your system for immediate access.</li>
+                        <li>Facilitates analysis and allows for integration with other spreadsheets or business
+                            tools.</li>
+                    </ul>
+                </div>
+                <div class="details" *ngSwitchCase="'pitch-deck'" [@enterTrigger]="'fadeIn'">
+                    <p>Expertise and Experience</p>
+                    <ul>
+                        <li>Proven frameworks: Leverages successful pitch deck structures and best practices
+                            tailored
+                            specifically for attracting partners.</li>
+                        <li>Partner-focused messaging: Ensures the deck effectively communicates the value
+                            proposition and
+                            benefits for potential partners.</li>
+                    </ul>
+
+                    <p>Efficiency and Speed</p>
+                    <ul>
+                        <li>Streamlined process: Utilizing a partner program framework provides a clear roadmap for
+                            content
+                            development, saving time and effort.</li>
+                        <li>Rapid turnaround: A structured approach enables the service to create compelling pitch
+                            decks
+                            with an efficient timeline.</li>
+                    </ul>
+
+                    <p>Customization and Collaboration</p>
+                    <ul>
+                        <li>Tailored content: While using a framework, the service will work with you to incorporate
+                            your
+                            startup's unique story and partnership opportunities.</li>
+                        <li>Iterative approach: Provides opportunities for feedback and revisions to ensure the
+                            final pitch
+                            deck accurately reflects your partnership vision.</li>
+                    </ul>
+
+                    <p>Professionalism and Impact</p>
+                    <ul>
+                        <li>Polished design: Delivers a visually appealing and professionally formatted deck,
+                            enhancing your
+                            credibility in front of potential partners.</li>
+                        <li>Compelling narrative: The focus on partner programs ensures a strong narrative that
+                            resonates
+                            with partners and increases your chances of successful collaborations.</li>
+                    </ul>
+                </div>
+                <div class="details" *ngSwitchCase="'coaching'" [@enterTrigger]="'fadeIn'">
+                    <p>Flexibility and Cost-Effectiveness</p>
+                    <ul>
+                        <li>Pay for what you need: Only utilize Blackwood Operations' expertise for specific tasks
+                            or
+                            stages of your startup journey, reducing overall costs compared to hiring a full-time
+                            consultant.</li>
+                        <li>Scalability: Adapt your engagement with Blackwood Operations as your startup evolves.
+                            Increase support during critical phases or scale back as you gain traction.</li>
+                    </ul>
+
+                    <p>Targeted Expertise</p>
+                    <ul>
+                        <li>Access specialized skills: Benefit from Blackwood Operations' specific knowledge and
+                            experience in relevant areas like business strategy, fundraising, or marketing, without
+                            hiring dedicated staff</li>
+                        <li>Focus on your strengths: Free yourself to concentrate on core competencies while
+                            Blackwood
+                            Operations handles specific challenges within the startup process.</li>
+                    </ul>
+
+                    <p>Efficiency and Guidance</p>
+                    <ul>
+                        <li>Fast-track your progress: Leverage Blackwood Operations' experience to avoid pitfalls
+                            and
+                            accelerate your path to success</li>
+                        <li>Expert roadmap and direction: Gain a clear understanding of the steps involved and the
+                            strategic direction needed to achieve your startup goals</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="cost">$99 /hr</div>
-        <div class="image pm"></div>
-    </div>
-    <div [class.collapsed]="getState('forcast')">
-        <div class="heading" (click)="toggleState('forecast')">
-            <h2>Financial forecast</h2>
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
-        <div class="content" [class.collapsed]="getState('forecast')">
-            <div class="lead">
-                <div class="intro">
-                    Designed within an Excel workbook.
-                    <br><br>
-                    This solution leverages the familiarity of Excel to provide an accessible and customizable platform
-                    for
-                    managing your company. You'll benefit from automated calculations, insightful dashboards, and
-                    detailed
-                    explanations of all formulas. Easily adapt and update the workbook as your startup grows, ensuring
-                    it
-                    meets
-                    your evolving needs.
+    </section>
+</section>
+
+
+
+
+<!-- <div class="offerings">
+            <div [class.collapsed]="getState('pm')">
+                <div class="heading" (click)="toggleState('pm')">
+                    <h3>Project management</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </div>
+                <div class="content" [class.collapsed]="getState('pm')">
+                    <div class="lead">
+                        <div class="intro">
+                            Alternatively, you can engage a member of our team to deliver strong project management,
+                            tracking
+                            deliverables to milestones, and creating regular status reports.
+                        </div>
+                        
 
-                <p>Cost-effectiveness</p>
-
-                <ul>
-                    <li>Leverages a tool most businesses already own, minimizing the need for specialized referral
-                        management software.</li>
-                    <li>Eliminates or reduces subscription fees associated with dedicated referral platforms.</li>
-                </ul>
-
-                <p>User-Friendliness</p>
-                <ul>
-                    <li>Familiar interface for many users, reducing the learning curve.</li>
-                    <li>Detailed explanations of formulas demystify the process and empower users to make changes.</li>
-                </ul>
-
-                <p>Customizability</p>
-                <ul>
-                    <li>Easily modify formulas and calculations to suit your business's specific needs.</li>
-                    <li>Add new functionality, tracking metrics, or reporting as your referral program evolves.</li>
-                </ul>
-
-                <p>Data Accessibility</p>
-                <ul>
-                    <li>Referral data is stored directly within your system for immediate access.</li>
-                    <li>Facilitates analysis and allows for integration with other spreadsheets or business tools.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="cost">$975</div>
-        <div class="image excel">
-        </div>
-    </div>
-    <div [class.collapsed]="getState('pitch')">
-        <div class="heading" (click)="toggleState('pitch')">
-            <h2>Pitch deck</h2>
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
-        <div class="content" [class.collapsed]="getState('pitch')">
-            <div class="lead">
-                <div class="intro">
-                    By leveraging the IdeaPros® partner program framework, this service delivers tailored pitch decks
-                    with a clear focus on partnership value and success.
+                    </div>
                 </div>
-
-                <p>Expertise and Experience</p>
-                <ul>
-                    <li>Proven frameworks: Leverages successful pitch deck structures and best practices tailored
-                        specifically for attracting partners.</li>
-                    <li>Partner-focused messaging: Ensures the deck effectively communicates the value proposition and
-                        benefits for potential partners.</li>
-                </ul>
-
-                <p>Efficiency and Speed</p>
-                <ul>
-                    <li>Streamlined process: Utilizing a partner program framework provides a clear roadmap for content
-                        development, saving time and effort.</li>
-                    <li>Rapid turnaround: A structured approach enables the service to create compelling pitch decks
-                        with an efficient timeline.</li>
-                </ul>
-
-                <p>Customization and Collaboration</p>
-                <ul>
-                    <li>Tailored content: While using a framework, the service will work with you to incorporate your
-                        startup's unique story and partnership opportunities.</li>
-                    <li>Iterative approach: Provides opportunities for feedback and revisions to ensure the final pitch
-                        deck accurately reflects your partnership vision.</li>
-                </ul>
-
-                <p>Professionalism and Impact</p>
-                <ul>
-                    <li>Polished design: Delivers a visually appealing and professionally formatted deck, enhancing your
-                        credibility in front of potential partners.</li>
-                    <li>Compelling narrative: The focus on partner programs ensures a strong narrative that resonates
-                        with partners and increases your chances of successful collaborations.</li>
-                </ul>
+                <div class="cost">$125 /hr</div>
+                <div class="image pm"></div>
             </div>
-        </div>
-        <div class="cost">$1,045</div>
-        <div class="image pitch"></div>
-    </div>
-    <div [class.collapsed]="getState('coaching')">
-        <div class="heading" (click)="toggleState('coaching')">
-            <h2>Coaching</h2>
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
-        <div class="content" [class.collapsed]="getState('coaching')">
-            <div class="lead">
-                <div class="intro">
-                    Based on an as needed basis. You can engage Blackwood Operations to drive the startup process. We
-                    will
-                    establish the roadmap and necessary strategic direction.
+            <div [class.collapsed]="getState('forcast')">
+                <div class="heading" (click)="toggleState('forecast')">
+                    <h3>Financial forecast</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </div>
+                <div class="content" [class.collapsed]="getState('forecast')">
+                    <div class="lead">
+                        <div class="intro">
+                            Designed within an Excel workbook.
+                            <br><br>
+                            This solution leverages the familiarity of Excel to provide an accessible and customizable
+                            platform
+                            for
+                            managing your company. You'll benefit from automated calculations, insightful dashboards,
+                            and
+                            detailed
+                            explanations of all formulas. Easily adapt and update the workbook as your startup grows,
+                            ensuring
+                            it
+                            meets
+                            your evolving needs.
+                        </div>
 
-                <p>Flexibility and Cost-Effectiveness</p>
-                <ul>
-                    <li>Pay for what you need: Only utilize Blackwood Operations' expertise for specific tasks or
-                        stages of your startup journey, reducing overall costs compared to hiring a full-time
-                        consultant.</li>
-                    <li>Scalability: Adapt your engagement with Blackwood Operations as your startup evolves.
-                        Increase support during critical phases or scale back as you gain traction.</li>
-                </ul>
-
-                <p>Targeted Expertise</p>
-                <ul>
-                    <li>Access specialized skills: Benefit from Blackwood Operations' specific knowledge and
-                        experience in relevant areas like business strategy, fundraising, or marketing, without
-                        hiring dedicated staff</li>
-                    <li>Focus on your strengths: Free yourself to concentrate on core competencies while Blackwood
-                        Operations handles specific challenges within the startup process.</li>
-                </ul>
-
-                <p>Efficiency and Guidance</p>
-                <ul>
-                    <li>Fast-track your progress: Leverage Blackwood Operations' experience to avoid pitfalls and
-                        accelerate your path to success</li>
-                    <li>Expert roadmap and direction: Gain a clear understanding of the steps involved and the
-                        strategic direction needed to achieve your startup goals</li>
-                </ul>
+                        
+                    </div>
+                </div>
+                <div class="cost">$975</div>
+                <div class="image excel">
+                </div>
             </div>
-        </div>
-        <div class="cost">$145 /hr</div>
-        <div class="image roadmap"></div>
-    </div>
+            <div [class.collapsed]="getState('pitch')">
+                <div class="heading" (click)="toggleState('pitch')">
+                    <h3>Pitch deck</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="content" [class.collapsed]="getState('pitch')">
+                    <div class="lead">
+                        <div class="intro">
+                            By leveraging the IdeaPros® partner program framework, this service delivers tailored pitch
+                            decks
+                            with a clear focus on partnership value and success.
+                        </div>
 
+                        
+                    </div>
+                </div>
+                <div class="cost">$1,045</div>
+                <div class="image pitch"></div>
+            </div>
+            <div [class.collapsed]="getState('coaching')">
+                <div class="heading" (click)="toggleState('coaching')">
+                    <h3>Coaching</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="content" [class.collapsed]="getState('coaching')">
+                    <div class="lead">
+                        <div class="intro">
+                            Based on an as needed basis. You can engage Blackwood Operations to drive the startup
+                            process. We
+                            will
+                            establish the roadmap and necessary strategic direction.
+                        </div>
 
-
-</div>
-
-<div class="contact">
-    <p>Schedule a free consultation</p>
-    <p>
-        donna@blackwoodops.com
-    </p>
-</div>
+                        
+                    </div>
+                </div>
+                <div class="cost">$245 /hr</div>
+                <div class="image roadmap"></div>
+            </div>
+        </div> -->

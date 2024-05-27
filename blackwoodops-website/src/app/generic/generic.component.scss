@@ -1,0 +1,100 @@
+.wrapper-generic {
+    background: #523c85;
+
+    .content {
+        &.main-content {
+            p {
+                color: #fff;
+            }
+        }
+
+        &.lead-content {
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .inner {
+        padding: 5em 10em 3em 10em;
+        max-width: 100%;
+        margin: 0 auto;
+
+
+
+
+        h3,
+        h2,
+        h1 {
+            color: #fff;
+            position: relative;
+            margin: 0 0 1.3em 0;
+            position: relative;
+            padding-bottom: 0.35em;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        h2::after {
+
+            background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
+            background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
+            background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
+            background-image: linear-gradient(to right, #5e42a6, #b74e91);
+            -moz-transition: max-width 0.2s ease;
+            -webkit-transition: max-width 0.2s ease;
+            -ms-transition: max-width 0.2s ease;
+            transition: max-width 0.2s ease;
+            border-radius: 0.2em;
+            bottom: 0;
+            content: '';
+            height: 0.1em;
+            position: absolute;
+            right: 0;
+            width: 100%;
+
+        }
+
+        .image {
+            border-radius: 0.25em;
+            border: 0;
+            display: inline-block;
+            position: relative;
+
+            &.fit {
+                display: block;
+                margin: 0 0 2em 0;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    border-radius: 0.25em;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .banner {
+        padding: 0em 5em 0em 5em;
+        max-width: 100%;
+        margin: 0 auto;
+        
+        img {
+            width: 40vw;
+            border-radius: 0.25em;
+            display: block;
+            margin: 0 auto;
+            aspect-ratio: 16 / 9;
+        }
+    }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .main-bkg {
+        border-radius: 0;
+    }
+}

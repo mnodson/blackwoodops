@@ -1,125 +1,80 @@
-<h1>Tackling operations and solving problems for your business</h1>
-<div class="bullet-points horizontal">
-    <h2>Efficient</h2>
-    &bullet;
-    <h2>Effective</h2>
-    &bullet;
-    <h2>Delivered</h2>
-</div>
+<section id="intro" class="fullscreen wrapper style1">
+    <div class="inner hidden">
+        <h1>BLACKWOOD OPERATIONS</h1>
 
-<div class="summary">
-    <p>Blackwood Ops is a business operations consultancy with deep expertise and a proven track record of
-        success.
-        The company is founded on a breadth of operational experience in a global environment with companies ranging from startups to Fortune 500.
-    </p>
-    <p>
-        Clients sectors encompass <strong>service-based</strong>, <strong>SaaS</strong>,
-        <strong>manufacturing</strong>, <strong>financial</strong>, and <strong>retail</strong> organizations.
-    </p>
-    <p>
-        We are passionate about driving business forward through strategic enablement: <span
-            class="highlight-text">evolving
-            challenges to become opportunities.</span>
-    </p>
-</div>
-<a href="home#memberships" class="cta">Explore what we have to offer and decide what package would uniquely suit
-    your needs&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
-
-<div class="memberships__container" id="memberships">
-    <h2>Focused programs&nbsp;<i class="fa-solid fa-arrow-turn-down"></i></h2>
-
-    <div class="programs programs--adhoc">
-        <div class="program program--ff">
-            <div class="heading">Financial forecast</div>
-            <p>
-                Includes one financial forecast and 4 weekly group sessions.
-            </p>
-            <div class="actions">
-                <a href="mailto:donna@blackwoodops.com?subject=I'm interested in attending Financial forecast sessions"
-                    class="talk">Let's talk</a>
-                <div class="price"><span>$</span>&nbsp;700</div>
-            </div>
-        </div>
-
-        <div class="program program--pdd">
-            <div class="heading">Pitch deck development</div>
-            <p>
-                Includes one pitch-deck (PPT) and 4 weekly group sessions.
-            </p>
-            <div class="actions">
-                <a href="mailto:donna@blackwoodops.com?subject=I'm interested in attending Pitch deck development sessions"
-                    class="talk">Let's talk</a>
-                <div class="price"><span>$</span>&nbsp;850</div>
-            </div>
-        </div>
-
-        <div class="program program--bpv">
-            <div class="heading">Business plan development</div>
-            <p>Includes one business plan and 4 weekly group sessions.</p>
-            <div class="actions">
-                <a href="mailto:donna@blackwoodops.com?subject=I'm interested in attending Business plan development sessions"
-                    class="talk">Let's talk</a>
-                <div class="price"><span>$</span>&nbsp;1,750</div>
-            </div>
-        </div>
+        <p>
+            We deliver business operations for companies positioning for revenue growth.
+            <br>
+            Serving primarily SaaS and service-based organizations, we have also engaged with clients in industries such
+            as
+            <br>
+            <b>retail</b>, <b>ecommerce</b>, and <b>manufacturing</b>.
+        </p>
+        <ul class="actions">
+            <li>
+                <a class="button" (click)="scrollToNextSection()">Learn More</a>
+            </li>
+        </ul>
     </div>
 
-    <h2>Specialized programs&nbsp;<i class="fa-solid fa-arrow-turn-down"></i></h2>
+</section>
 
-    <div class="programs programs--subscription">
-        <div class="program program--q">
-            <div class="heading">Quarterly</div>
-            <p>Includes 24 weekly group sessions (can be engaged on a rolling basis - so 12 weeks from whenever they
-                start).</p>
-            <div class="actions">
-                <a href="mailto:donna@blackwoodops.com?subject=I'm interested in attending quarterly specialized sessions"
-                    class="talk">Let's talk</a>
-                <div class="price"><span>$</span>&nbsp;495</div>
+<section id="one" class="wrapper style2 spotlights">
+    <section>
+        <a class="image image1 hidden-fade"></a>
+        <div class="content">
+            <div class="inner hidden-lr">
+                <h2>Process automation and optimization</h2>
+                <p>A law firm drastically cut client intake time from days to minutes with automation, leading to record-breaking new client sign-ups. This example shows how businesses can efficiently achieve growth through process optimization and automation.</p>
+                <ul class="actions">
+                    <li>
+                        <a [routerLink]="['/process-automation']" class="button">Learn More</a>
+                    </li>
+                </ul>
             </div>
         </div>
-
-        <div class="program program--sup">
-            <div class="heading">Start-up package</div>
-            <p>Includes business plan, financial forecast, pitch deck, 24 weekly group sessions, and 3 hours of
-                personal coaching sessions.</p>
-            <div class="actions">
-                <a href="mailto:donna@blackwoodops.com?subject=I'm interested in attending a start-up package"
-                    class="talk">Let's talk</a>
-                <div class="price"><span>$</span>&nbsp;3,450</div>
+    </section>
+    <section>
+        <a class="image image2 hidden-fade"></a>
+        <div class="content">
+            <div class="inner hidden-lr">
+                <h2>Security audits and assessments</h2>
+                <p>Our cybersecurity expertise helps companies achieve HITRUST certification efficiently, overcoming longstanding challenges with project management and audit knowledge. We cater to diverse industries and company sizes, ensuring compliance with various security frameworks.</p>
+                <ul class="actions">
+                    <li>
+                        <a [routerLink]="['/security-audits']" class="button">Learn More</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="sessions__container">
-    <h2>Sessions, and what to expect&nbsp;<i class="fa-solid fa-arrow-turn-down"></i></h2>
-    <div class="sessions">
-        <mat-accordion>
-            <mat-expansion-panel *ngFor="let session of sessions">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <span class="gs-icon" *ngIf="session.guestSpeaker"><mat-icon >account_circle</mat-icon>&nbsp;</span>{{session.heading}}
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <p style="background: #EEEEEE;
-                border: 1px solid #B0BEC5;
-                padding: 1rem;
-                margin-top: 0;
-                border-radius: 0.25rem;">{{session.subheading}}</p>
-        <div>
-            <div class="points">
-                <div *ngFor="let point of session.keySellingPoints?.points">
-                    <div class="heading">{{point.heading}}</div>
-                    <div class="copy" *ngIf="point.ksp">{{point.ksp}}</div>
-                </div>
+    </section>
+    <section>
+        <a class="image image3 hidden-fade"></a>
+        <div class="content">
+            <div class="inner hidden-lr">
+                <h2>Project management</h2>
+                <p>Blackwood Operations' skilled project managers simplify complex technology transitions, ensuring smooth vendor implementation through planning, transparency, and optimization. Their proven approach, exemplified by successful client transitions, ensures projects meet objectives and overcome challenges effectively.
+                </p>
+                <ul class="actions">
+                    <li>
+                        <a [routerLink]="['/project-management']" class="button">Learn More</a>
+                    </li>
+                </ul>
             </div>
         </div>
-                <div *ngIf="session.guestSpeaker" class="guest-speaker">
-                    <div class="announce">Guest speaker</div>
-                    <div class="speaker_name">{{session.guestSpeaker.name}}</div>
-                    <div class="speaker_org">{{session.guestSpeaker.org}}</div>
-                </div>
-            </mat-expansion-panel>
-        </mat-accordion>
-    </div>
-</div>
+    </section>
+    <section>
+        <a class="image image4 hidden-fade"></a>
+        <div class="content">
+            <div class="inner hidden-lr">
+                <h2>Business operations coaching and consulting</h2>
+                <p>Blackwood Operations' experienced consultants solve complex business problems for companies of all sizes, providing tailored solutions and proven results. Their diverse experience, from Ford's process improvements to HotDocs' cloud transformation, exemplifies their ability to drive successful outcomes.</p>
+                <ul class="actions">
+                    <li>
+                        <a [routerLink]="['/business-operations']" class="button">Learn More</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
