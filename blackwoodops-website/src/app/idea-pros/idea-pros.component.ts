@@ -1,38 +1,28 @@
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ThisReceiver } from '@angular/compiler';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+
+
+export type AvailablePackages = 'project-management' | 'financial-forecast' | 'pitch-deck' | 'coaching';
 
 @Component({
   selector: 'app-idea-pros',
   templateUrl: './idea-pros.component.html',
-  styleUrls: ['./idea-pros.component.scss']
+  styleUrls: ['./idea-pros.component.scss'],
+  animations: [
+    trigger('enterTrigger', [
+    state('fadeIn', style({
+        opacity: '1',
+        transform: 'translateX(0)'
+    })),
+    transition('void => *', [style({opacity: '0'}), animate('350ms ease')])
+    ])
+  ]
 })
 export class IdeaProsComponent {
+  public showPackageDetails: AvailablePackages | undefined = 'project-management';
 
-  public componentStates = new Map<string, boolean>();
-
-  toggleState(section: string) {
-
-    if (this.componentStates.has(section)) {
-      const currentValue = this.componentStates.get(section);
-      this.componentStates.set(section, !currentValue);
-    } else {
-      this.componentStates.set(section, false);
-    }
-  }
-
-  resetAllOtherStates(section: string) {
-    this.componentStates.forEach((value, key) => {
-      if (key !== section) {
-        this.componentStates.set(key, true);
-      }
-    });
-  }
-
-  getState(section: string) {
-    if (this.componentStates.has(section)) {
-      return !!this.componentStates.get(section);
-    } else {
-      return true;
-    }
+  public setPackageDetails(pkg: AvailablePackages) {
+    this.showPackageDetails = pkg;
   }
 }

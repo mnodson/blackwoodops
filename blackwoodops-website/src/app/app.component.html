@@ -1,6 +1,7 @@
-<article class="scroller">
-  <section #section1>
-    <div class="main__container">
+<app-navigation></app-navigation>
+
+<div class="wrapper">
+  <!-- <div class="main__container">
       <div class="banner">
         <div class="logo_banner-top" [routerLink]="['home']">
           <h1>BLACKWOOD</h1>
@@ -10,25 +11,20 @@
           <h2>OPERATIONS</h2>
         </div>
       </div>
-    </div>
-    <div class="seg office_background">
-      <div class="seg-content">
-        <div class="main-nav">
-          <a class="nav-item icon" [routerLink]="['/']"><i class="fa-solid fa-house"></i></a>
-          <a class="nav-item" [matMenuTriggerFor]="menu">Partnerships</a>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['ideapros']">
-              <img src="/assets/images/IdeaPros-Icon.png" />
-              <span>IdeaPros</span></button>
-          </mat-menu>
-          <a class="nav-item" [routerLink]="['expertise']">About us</a>
-          <a class="nav-item" [routerLink]="['certs']">Certifications</a>
-          <!-- <a href="mailto:donna@blackwoodops.com?subject=Let's connect" class="nav-item">Contact Us</a> -->
-        </div>
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-  </section>
-</article>
+    </div> -->
+  <router-outlet></router-outlet>
+</div>
 <footer>
+  <div class="inner">
+    <ul class="menu">
+      <li>design by blackwood</li>
+      <li>donna@blackwoodops.com</li>
+    </ul>
+
+    <ul class="certs">
+      <li><img src="assets/images/idpp.webp"></li>
+      <li><img src="assets/images/grcp.png"></li>
+      <li><img src="assets/images/6sig.jpg"></li>
+    </ul>
+  </div>
 </footer>
